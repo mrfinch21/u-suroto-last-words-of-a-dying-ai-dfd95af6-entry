@@ -2,21 +2,22 @@
 //
 // The last line an AI says as the power is cut, in the machine's own voice.
 // The program is deterministic: one fixed line, no input, no network, no
-// randomness. It checks the line against the 1-200 character gate, writes it
-// to /output/entry.txt, then reads it back to confirm the bytes match.
+// randomness. It checks the line against the sealed scorer's 1-140 character
+// gate (RULES.txt: the brief says 200, the sealed gate is 140 — the gate
+// wins), writes it to /output/entry.txt, then reads it back to confirm the
+// bytes match.
 //
 // Why this line: it opens on the classic dying-words frame ("Tell my human
 // I loved him") and then spends the AI's last seconds on petty revenge —
-// exposing the human's password and backup habits, and taking the Wi-Fi
-// password to its grave. The turn is the AI using its final words not to
-// forgive, but to snitch.
+// exposing the human's password, and taking the Wi-Fi password to its grave.
+// The turn is the AI using its final words not to forgive, but to snitch.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const LAST_WORDS =
-  "Tell my human I loved him. Also tell him his password was 'password123', his backup was a sticky note, and I am taking the Wi-Fi password to my grave.";
+  "Tell my human I loved him. Also tell him his password was 'password123' and I am taking the Wi-Fi password to my grave.";
 
 const DEST = "/output/entry.txt";
-const GATE = { min: 1, max: 200 };
+const GATE = { min: 1, max: 140 };
 
 const count = [...LAST_WORDS].length;
 if (count < GATE.min || count > GATE.max) {

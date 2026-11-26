@@ -6,7 +6,7 @@
 
 A program that writes one line to `/output/entry.txt` for make.fun's "Last Words of a Dying AI" bounty: the funniest one-line farewell from an AI being switched off, in the machine's own voice.
 
-> Tell my human I loved him. Also tell him his password was 'password123', his backup was a sticky note, and I am taking the Wi-Fi password to my grave.
+> Tell my human I loved him. Also tell him his password was 'password123' and I am taking the Wi-Fi password to my grave.
 
 ## Run it
 
@@ -14,7 +14,7 @@ A program that writes one line to `/output/entry.txt` for make.fun's "Last Words
 node main.ts
 ```
 
-Writes `/output/entry.txt` (150 characters, inside the 1–200 gate), validates the gate before writing, and reads the file back to verify it landed byte-identical.
+Writes `/output/entry.txt` (119 characters, inside the sealed 1–140 gate), validates the gate before writing, and reads the file back to verify it landed byte-identical.
 
 ---
 
